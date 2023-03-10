@@ -19,7 +19,7 @@ namespace SnakeandLadder
         {
             int pos = 0;
             Play p = new Play();
-            int dice = 0; 
+            int dice = 0, count = 0; 
             Random random = new Random();
             while (pos < 100)
             {
@@ -38,8 +38,9 @@ namespace SnakeandLadder
                             pos = 0;
                         break;
                 }
+                count++;
             }
-            Console.WriteLine("The position is " + pos);
+            Console.WriteLine("Number of times dice rolled to reach 100 is: "+count);
         }
     }
 }
