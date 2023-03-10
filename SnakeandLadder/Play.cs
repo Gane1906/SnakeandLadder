@@ -19,19 +19,25 @@ namespace SnakeandLadder
         {
             int pos = 0;
             Play p = new Play();
-            int dice = p.rollDice();
+            int dice = 0; 
             Random random = new Random();
-            int check = random.Next(0, 3);
-            switch (check) 
+            while (pos < 100)
             {
-                case LADDER:
-                    pos += dice;
-                    break;
-                case SNAKE:
-                    pos -= dice;
-                    break;
+                int check = random.Next(0, 3);
+                dice = p.rollDice(); 
+                switch (check)
+                {
+                    case LADDER:
+                        pos += dice;
+                        break;
+                    case SNAKE:
+                        pos -= dice;
+                        if (pos < 0)
+                            pos = 0;
+                        break;
+                }
             }
-            Console.WriteLine("The position after rolling dice is "+pos);
+            Console.WriteLine("The position is " + pos);
         }
     }
 }
