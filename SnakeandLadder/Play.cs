@@ -29,6 +29,8 @@ namespace SnakeandLadder
                 {
                     case LADDER:
                         pos += dice;
+                        if (pos > 100)
+                            pos -= dice;
                         break;
                     case SNAKE:
                         pos -= dice;
